@@ -65,4 +65,14 @@ def csv_maker(wr, csv_format, data, constants, equivalent):
 		wr.writerow(row)
 
 
-pco2_maker(file)
+lines = 0
+with open(sys.argv[1]) as f:
+	for line in f:
+		lines += 1
+
+if lines == 2:
+	print(lines)
+	pco2_maker(file)
+else:
+	print(lines, "PHSEN")
+	phsen_maker(file)
